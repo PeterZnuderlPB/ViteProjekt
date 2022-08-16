@@ -1,6 +1,86 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.card{
+  width: 400px;
+  border-radius: 20px;
+}
+
+.card-background-img{
+  min-height: 200px;
+  background-color: aquamarine;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-profile-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  background-color: blueviolet;
+  position: relative;
+  margin-top: -75px;
+  margin-bottom: -75px;
+  margin-left:125px;
+  margin-right:125px;
+  z-index: 2;
+}
+
+.card-info-area{
+  min-height: 250px;
+  background-color: cadetblue;
+  z-index: 1;
+  padding: 75px 20px 20px 20px;
+}
+
+.card-follow-info{
+  min-height: 70px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-bottom-button{
+  min-height: 50px;
+  background-color: aqua;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.follow-info{
+  background-color: azure;
+  width: 50%;
+  height: 70px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: lightgray;
+}
+
+h1.profile-name{
+  font-size: 1.5em;
+}
+
+
+p.card-simple-text{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+p.card-bold-text{
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+}
+
+button.success-button{
+  background-color:lightgreen;
 }
