@@ -6,6 +6,6 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Cards count={2} />
+    <Cards count={3} />
   </React.StrictMode>
 )
