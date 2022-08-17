@@ -1,0 +1,11 @@
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-container{
+  width:1400px;
+  display: flex;
+  justify-content: space-evenly;
+}
