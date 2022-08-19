@@ -1,0 +1,5 @@
+.hero-section {
+    height: 500px;
+    margin-top: calc(calc(100px + 2rem) * -1);
+    background-image: url(https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_large_assets/eea3522f4348/assets/img/home/hero_photos/BWRT755ImlKnGpjV4udRdQ.jpg);
+}

@@ -1,43 +1,50 @@
-body{
-    all: unset;
-    background-color: whitesmoke;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap');
+
+* {
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  all: unset;
+  background-color: whitesmoke;
 }
 
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-.flex-column{
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.flex-row{
-    flex-direction: row;
+.flex-column {
+  flex-direction: column;
 }
 
-  .flex-item-1 {
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-item-1 {
+  flex: 100%;
+}
+
+.flex-item-2 {
+  flex: 50%;
+}
+
+.flex-item-3 {
+  flex: 33%;
+}
+
+.flex-item-4 {
+  flex: 25%;
+}
+
+/* Responsive layout - makes a one column layout (100%) instead of a two-column layout (50%) */
+@media (max-width: 800px) {
+  .flex-item-2,
+  .flex-item-3 {
     flex: 100%;
   }
-  
-  .flex-item-2 {
+  .flex-item-4 {
     flex: 50%;
   }
-
-  .flex-item-3 {
-    flex: 33%;
-  }
-
-  .flex-item-4{
-    flex: 25%;
-  }
-
-  /* Responsive layout - makes a one column layout (100%) instead of a two-column layout (50%) */
-  @media (max-width: 800px) {
-    .flex-item-2, .flex-item-3 {
-      flex: 100%;
-    }
-    .flex-item-4{
-        flex: 50%;
-    }
-  }
+}

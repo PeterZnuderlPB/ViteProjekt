@@ -5,7 +5,6 @@ const HeroSection = (props) => {
 
   return (
     <div className='hero-section'>
-        
     </div>
   )
 }
