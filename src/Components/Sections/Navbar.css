@@ -1,0 +1,12 @@
+.navbar{
+    height: 70px;
+    max-height: 70px;
+    padding: 15px;
+    margin: 0px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 15%, rgba(255,255,255,0) 95%);
+}
+
+.dropdowns{
+    margin: 8px 16px;
+}
