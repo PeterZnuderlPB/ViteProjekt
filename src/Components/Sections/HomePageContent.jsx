@@ -1,60 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./HomePageContent.css";
 import Card from "../General/Card";
-
-const card_data = [
-    {
-        'header': 'Prva karta',
-        'content': 'description...',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    },
-    {
-        'header': 'Druga karta',
-        'content': 'description...',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    },
-    {
-        'header': 'Tretja karta',
-        'content': 'description...',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    },
-    {
-        'header': 'Četrta karta',
-        'content': 'description...',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    },
-    {
-        'header': 'Peta karta',
-        'content': 'description... fdsfs',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    },
-    {
-        'header': 'Šesta karta',
-        'content': 'description...',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    },
-    {
-        'header': 'Sedma karta',
-        'content': 'description...',
-        'date': new Date(),
-        'image': 'https://www.thedesignwork.com/wp-content/uploads/2011/10/Random-Pictures-of-Conceptual-and-Creative-Ideas-02.jpg?w=640'
-    }
-]
+import { useNavigate } from "react-router-dom";
+import { getUsers } from "../../helper/api";
 
 const HomePageContent = (props) => {
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+  const getData = async () => {
+    const data = await getUsers();
+    setUsers(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const showUserData = () => {
+    navigate("/user");
+  };
   return (
     <div className="homepage-content">
       <h1>Recent Activity</h1>
       <div className="cards-container">
-        {card_data.map((card_data, index) => (
-            <Card key={index} {...card_data} />
-        ))}
+        {users.map((user, index) => {
+          const cardData = {
+            image: user.avatar,
+            header: `${user.first_name} ${user.last_name}`,
+            date: new Date(user.date_of_birth)
+          };
+          return <Card key={index} {...cardData} onClickFunction={showUserData} />;
+        })}
       </div>
     </div>
   );
